@@ -1,22 +1,25 @@
+import java.util.Objects;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) throws Exception {
-//        ComplexIO start = new ComplexIO();
-//        start.WorkWithComplex();
-        MatrixIO start = new MatrixIO();
-        start.WorkWithMatrix();
-//        InputOutput start = new InputOutput();
-//        start.startWork();
-//        Complex[] new_m = new Complex[10];
-//        System.out.println(new_m.length);
-//        Matrix a = new Matrix(2, 2);
-//        Complex[][] lst = new Complex[2][2];
-//        Complex[][] dataList = new Complex[][]{{new Complex(1, 0), new Complex(2, 2)}, {new Complex(3, -1.5), new Complex(4,0)}};
-//        for (int i = 0; i < 2; i++)
-//            for (int j = 0; j < 2; j++)
-//                lst[i][j] = dataList[i][j];
-//        a.FillMatrix(lst);
-//        a.CalcDet().PrintComplex();
-//        System.out.println();
-//        a.printMatrix();
+        Scanner console = new Scanner(System.in);
+        System.out.println("""
+                                        
+                    Hello!!
+                    Please enter:
+                    complex - if you want to work with complex numbers
+                    matrix - if you want to work with matrix
+                                        
+                    """);
+        String choice = console.nextLine();
+        if (Objects.equals(choice, "complex")) {
+            ComplexIO start = new ComplexIO();
+            start.WorkWithComplex();
+        }
+        else if (Objects.equals(choice, "matrix")) {
+            MatrixIO start = new MatrixIO();
+            start.WorkWithMatrix();
+        }
     }
 }
